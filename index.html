@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="new.css">
+</head>
+<body>
+    <h1>This is top of div</h1>
+
+    <!--React works inside a div created with name of id = "header" , in app.js we are rendering object with root which we can 
+        render with header also
+    -->
+
+    <div id = "header"></div>
+
+   <div id = "root" 
+  
+   ><h1>This is inside of div</h1></div>
+   <h1>This is bottom of div</h1>
+
+   <!-- Everything is render inside this root by react , evreything is replaced in fraction of second , 
+    whatever you write inside this div tag
+   -->
+
+   <script
+    crossorigin 
+    src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <!--This is (the link has) source code for react developed by 
+        Facebooks-->
+
+   <script
+    crossorigin 
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js">
+    </script>
+    <!--This link is like a bridge for react and browser-->
+
+    <script src = "app.js"> // file should be after the .js files , sequence matters , otherwise it will throw an error
+       
+    </script>
+
+
+</body>
+</html>
