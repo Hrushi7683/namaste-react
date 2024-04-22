@@ -1,3 +1,6 @@
+import React from "react";
+import ReactDOM from "react-dom/client";
+
 /*
 const heading = React.createElement("h1", {id : "heading" , xyz : "abc"} , "Welcome to world of react");
 // this creates a js object/normal react element of name heading
@@ -84,7 +87,7 @@ const parent = React.createElement(
 [React.createElement(
     "div" ,
      {id : "child1"} ,
-[ React.createElement("h1" , {id : "h1"} , "this is heading1") ,
+[ React.createElement("h1" , {id : "h1"} , "this is heading1 HA HA HA") ,
 React.createElement("h2" , {id : "h2"} , "this is heading2")]
 ) , 
 React.createElement(

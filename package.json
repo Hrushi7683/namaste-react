@@ -1,0 +1,30 @@
+{
+  "name": "react",
+  "version": "1.0.0",
+  "description": "This is namste react",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hrushi7683/namaste-react.git"
+  },
+  "author": "Hrushikesh Kadam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hrushi7683/namaste-react/issues"
+  },
+  "homepage": "https://github.com/Hrushi7683/namaste-react#readme",
+  "devDependencies": {
+    "cssnano": "^4.1.11",
+    "parcel": "^2.12.0",
+    "parcel-bundler": "^1.12.5"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+
+  "browserslist" : ["last 2 versions"
+                    ]
+}

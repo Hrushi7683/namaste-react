@@ -1,0 +1,125 @@
+1)
+Package.json is configuration for npm( package manager)
+need --> to manage version of all packages/dependencies which we will download for our project
+
+2)
+Most imp package (also known as bundler) in every project --> bundler(parcel , veet , webpack)
+--> we will use parcel-->they all do same kind of work ,
+internal algo can be different .
+need of bundler--> To develope good code ,to clean , compress our code and to push app on production 
+initially our code is skeleton ---> parcel will give muscles and strength to it
+command to install parcel --> npm install -D parcel
+what is -D --> there are 2 types dependecies which we can install , 1) development dependecies 
+ , 2)normal dependecies
+dev -- > requried for development phase
+normal --> requried for production phase
+package will be downloaded from npm (remote database)
+
+3)
+After downloading this file you can see , this statement in "package.json" file 
+"parcel": "^2.12.0"  --> so this ^ symbol means caret which means that it will
+ update you to all future minor/patch versions, without incrementing the major version. 
+ ^1.2.3 will use releases from 1.2.3 to <2.0.0.
+
+ "parcel": "~2.12.0" --> this ~ symbol means tindel  which means that it will
+ update you to all future patch versions, without incrementing the minor version.
+  ~1.2.3 will use releases from 1.2.3 to <1.3.0.
+
+4)
+Difference btwn package-lock.json and package.json
+packagelock.json --> keeps track of exact version of package that is installed
+package.json ---> keeps track of approximate version of package
+
+5)
+what is node modules
+It's like a database which has all the code of dependencies , where all packages exists which
+we nedd -> i.e. parcel -->its dependencies -->its dependencies ->its dependencies .... thats 
+why there are lots of packages in node modules
+of packages in node modules
+
+each package have its denepndencies mentioned inside its package.json , so there is
+1 package.json per package
+
+6)
+Why there is no need to put node_modules on github?
+Ans is , coz with the help of package.json and  packagelock.json we can recreate all the node modules
+coz they have exact version of all dependencies which are needed , so it answers our another question 
+which is , yes there is need to put package.json and  packagelock.json on github.
+node_modules can be created automatically as you run the command 
+npm i -D parcel
+
+7)
+We have installed recat and react-dom in node module using following commands
+npm i/install react
+npm i/install react-dom
+--> as react and reactdom installed there is no need of external cdn commands which 
+have written inside our index.html file (inside of script tag)
+
+8)
+npx package_name file_name -->this command execute package for the given source file ,
+and creates the local host to run our file --> ERROR 1) localhost is created and showing error in console that , react not defined
+reason of error --> coz we have removed script tag which has external  CDN links , and downloaded the 
+react in node_modules , so now we have to import that by using --> import React as "react"
+ERROR 2) Now it will show scr is not browser supported 
+so reason for this error is in our index file we have given src = "app.js" , 
+so parcel considering this as a normal js file , but its not a normal js file 
+so have to add there as a type = "module" , now there is no error.
+
+9)
+What parcel does ?
+1.dev buildIt creates local server to run files'
+2.HMR -> Hot module replacement 
+3.parcel uses file matching algo , which is written in cpp
+4.It uses caching --> for faster build 
+5.Image optimization --> uses some existing libraries
+6.Minification(Make clean code) of files for push it to production
+7.consistent hashing
+8.code spliting
+9.Difeerntial building --> to support differnt older versions of different browser
+10.Parsel gives nice error view for developers in console
+11.Better error handling suggestion
+12.Gives feature to run app on HTTPs
+13.Tree shaking algo -->will remove all unwanted code
+14.Creates different dev and production bundles
+
+AND MANY MORE THINGS............This is a reason of statement , PARCEL IS BEAST
+
+10)
+Explanation for line 83
+npx parcel build index.html --> this will make files ready for production and store compressed and 
+cleaned  files inside dist folder. , dist folder is also regenerated at moment
+-->initially this will throw an error , coz we are giving entry point as index.html 
+and package.json considering as app.js , so there is conflict so we have to remove that line from file 
+
+11)
+.cache , node_modules and dist folder can be regenerated , they are temp folders
+coz at every stage this folders can be created , by package.json and packagelock.json 
+.cache file use to reduce build time of project
+
+12)
+The list of supported browser should be given by developers , and the code for it 
+is mentioned inside the package.json file 
+
+
+*---*---*---* Commands learned in Episode 2 *---*---*---*
+
+1.npm init --> To initialize a folder with npm
+2.npm install -D parcel
+3.npm i/install react
+4.npm i/install react-dom
+5.npx parcel index.html (npx package_name file_name)
+6.npx parcel build index.html --if there is error after this command --> npm uninstall cssnano ,  npm i -D cssnano@4.1.11
+-->last command is used to make our project production ready , all cleaned and compressed code kept in .dist folder
+
+
+
+
+
+
+
+
+
+
+
+
+
