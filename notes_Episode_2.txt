@@ -111,6 +111,68 @@ is mentioned inside the package.json file
 6.npx parcel build index.html --if there is error after this command --> npm uninstall cssnano ,  npm i -D cssnano@4.1.11
 -->last command is used to make our project production ready , all cleaned and compressed code kept in .dist folder
 
+                            Notes of Episode no : 3 
+
+JS engine understands , or browser understands EC6 , ECMASCRIPT6 language
+
+const jsxheading = <h1>welocome to world of react using JSX</h1>;
+//this is not a proper valid JS, error is there in console
+//thisis working bcoz of parcel
+//how? 
+jsx code --> transpiled(this code is converted to code which browser and react can understand)-->reached to JS engine
+//transpling is done by parcel , but parcel does not do this by its own , it is done by 
+//package known as Babel
+
+// React.createElement ==> ReactElement (JS object) ==> HTMLElement(render)
+const heading = React.createElement("h1", {id : "heading" , xyz : "abc"} , "Welcome to world of react");
+
+JSX => React.createElement => ReactElement (JS object) ==> HTMLElement(render)
+const jsxheading = <h1>welocome to world of react using JSX</h1>;
+
+const jsxheading = <h1 className="a" tabIndex="3">welocome to world of react using JSX</h1>;
+This is written in single line but what if we have to write this in multiple line , then we have to use
+curley braces
+ex : const jsxheading = {<h1 className="a" tabIndex="3">welocome to world of react using JSX</h1>};
+
+There are Two ways to write React Component.
+1.class based Component --old way
+2.functional based Component --latest way
+We will learn latest way
+A normal JS function that returns a jsx code is known as FBC
+synatx 1 :
+const Headingcomponent = () => {
+     return <h1>welcome to namste react !!</h1>;  // better option
+ };
+
+ Here return keyword is important , it plays an crucial role.
+
+synatx 2 :
+const Headingcomponent = () => { <h1>welcome to namste react !!</h1>;};
+
+synatx 3 :
+const Headingcomponent = () => <h1>welcome to namste react !!</h1>;
+
+NOTE:
+reactcomponent varaible name should start with capital letter , otherwise it will throw an error.
+
+How to render an reactcomponent ?
+syntax : root.render(Rreactcomponent/>);
+
+What is component composition?
+composing more than 1 component inside a component.
+
+We can put/write anything (JS code , mathematical functions etc)inside a reactcomponent using curley braces { } , and at anywhere
+
+We can put element inside function , or function inside element , 
+or function inside function 
+just dont write condition which will lead to an infinite loop
+
+suppose we get data through API 
+ex: const data = api.getdata();
+and if this aapi contains , malicious data , then attacker can get access to our js code and he can 
+manupulate our app ...this types of attackes known as -->
+But JSX doesnt process data blindly injected in reactcomponent , it santisizes our data and then 
+process that data
 
 
 

@@ -1,102 +1,81 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-/*
-const heading = React.createElement("h1", {id : "heading" , xyz : "abc"} , "Welcome to world of react");
+// React.createElement ==> ReactElement (JS object) ==> HTMLElement(render)
+
+//const heading = React.createElement("h1", {id : "heading" , xyz : "abc"} , "Welcome to world of react");
+
 // this creates a js object/normal react element of name heading
 //wlcome to the world of react is children 
 // id is a attribute for heading
-const root =  ReactDOM.createRoot(document.getElementById("root"));
-root.render(heading);
+//const root =  ReactDOM.createRoot(document.getElementById("root"));
+//root.render(heading);
 //render takes object heading and put that into heading tag h1
 
-*/
+// This method is kind of boaring/lengthy method of creating the h1 tag
+//So the another way of creating this , is using JSX
+// What is JSX --->JSX is a JavaScript Extension Syntax used in React to easily write HTML
+//and JavaScript together. it looks like HTML syntax
 
-// how to create nested structure like bellow in react
-/*
+//JSX => React.createElement => ReactElement (JS object) ==> HTMLElement(render)
+//This process is done by Babel
 
-<div id ="parent">
-    <div id = "child">
-        <h1>this is heading</h1>
-    </div>
-</div>
+//const jsxheading = <h1 className="a" tabIndex="3">welocome to world of react using JSX</h1>;
 
-*/
+//this is not a proper valid JS, error is there in console
+//thisis working bcoz of parcel
+//how? jsx code --> transpiled(this code is converted to code which browser nad react can understand)-->reached to JS engine
+//transpling is done by parcel , but parcel does not do this by its own , it is done by 
+//package known as Babel 
+//Babel is JS compiler which takes jsx code transpile that into react code , so browser and js engine can understand it
 
-/*
+// const root =  ReactDOM.createRoot(document.getElementById("root"));
+// root.render(jsxheading);
 
-const parent = React.createElement("div", {id : "parent" } , 
-React.createElement("div" , {id : "child"} ,
- React.createElement("h1" , {id : "h1"} , "this is heading")));
-
-const root =  ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
-
-*/
-// ReactElement(object) [with help of createElement method ] --- > HTML(Browser understands) [with help of render method]
-
-
-// how to create nested structure with more than 1 sibling of h1 tag like bellow in react
-/*
-
-<div id ="parent">
-    <div id = "child">
-        <h1>this is heading1</h1>
-        <h2>this is heading2</h2>
-    </div>
-</div>
-
-*/
-
-/*
-const parent = React.createElement(
-    "div",
-     {id : "parent" } , 
-React.createElement(
-    "div" ,
-     {id : "child"} ,
-[ React.createElement("h1" , {id : "h1"} , "this is heading1") ,
-React.createElement("h2" , {id : "h2"} , "this is heading2")]
-)
-);
-
-const root =  ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+//react element is created
+const vara = <h1>
+  Just testing !
+</h1> ;
 
 
-// how to create nested structure with more than 1 sibling of h1 tag like bellow in react
-/*
 
-<div id ="parent">
-    <div id = "child1">
-        <h1>this is heading1</h1>
-        <h2>this is heading2</h2>
-    </div>
-     <div id = "child2">
-        <h1>this is heading3</h1>
-        <h2>this is heading4</h2>
-    </div>
-</div>
-
-*/
+// Functional based component
 
 
-const parent = React.createElement(
-    "div",
-     {id : "parent" } , 
-[React.createElement(
-    "div" ,
-     {id : "child1"} ,
-[ React.createElement("h1" , {id : "h1"} , "this is heading1 HA HA HA") ,
-React.createElement("h2" , {id : "h2"} , "this is heading2")]
-) , 
-React.createElement(
-    "div" ,
-     {id : "child2"} ,
-[ React.createElement("h1" , {id : "h1"} , "this is heading3") ,
-React.createElement("h2" , {id : "h2"} , "this is heading4")]
-)]
-);
+
+const Title = () => {
+    return <h1> welocome the session of React </h1>
+     
+};
+
+
+const Headingcomponent = () => {
+
+    
+    
+     return <div id = "cc">
+        <Title></Title> {/* or <Title/> this is also used to compose another component*/}
+        <Title/>
+        {Title()}
+        {/* Above three lines does the same work */}
+        <h1> {vara} 
+        <h2>{200  + 233}</h2>
+            Hello , How's the josh 
+        </h1>
+     </div>
+     
+    
+};
+//here title is composed in Heading component , so it is called as component composition
+
+
+
+//const Headingcomponent = () => { <h1>welcome to namste react !!</h1>;};
+
+//const Headingcomponent = () => <h1>welcome to namste react !!</h1>;
 
 const root =  ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+
+root.render(<Headingcomponent/>); // This is a Method of rendering a react componenet
+
+
